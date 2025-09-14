@@ -1,0 +1,41 @@
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 40px;
+  padding: 0 16px 0 12px;
+  margin: 0 20px;
+  border-radius: 20px;
+  background: #fff;
+  border: 2px solid rgb(232, 232, 232);
+  transition: border-color 0.2s ease-in-out;
+  &:focus-within {
+    border: 2px solid #000;
+  }
+  &:focus-within .iconSearch {
+    opacity: 1;
+  }
+}
+.iconSearch {
+  width: 30px;
+  height: 19px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+}
+.searchInput {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0 4px;
+  font-size: 1.6rem;
+  background: #fff;
+  caret-color: #444; // màu của con trỏ chuột
+  &::-webkit-search-cancel-button {
+    height: 16px;
+    width: 16px;
+    padding-left: 10px;
+    color: #ccc;
+    cursor: pointer;
+  }
+}
