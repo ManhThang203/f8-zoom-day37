@@ -69,7 +69,7 @@ function NotificationResult() {
           </div>
           {notificationList &&
             notificationList.map((item, index) => (
-              <div className={item.action ? styles.active : ""}>
+              <div className={item.action ? styles.active : ""} key={index}>
                 <div className={styles.content} key={index}>
                   <div className={styles.avatar}>
                     <img

@@ -1,0 +1,40 @@
+.modal,
+.overlay {
+  position: fixed;
+  inset: 0;
+}
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btnClose {
+  z-index: 1;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgb(215, 96, 22);
+  transition: all 0.4s ease;
+  &:hover {
+    color: #fff;
+    background: rgb(215, 96, 22);
+  }
+}
+.icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  width: 160px;
+  margin-left: auto;
+}

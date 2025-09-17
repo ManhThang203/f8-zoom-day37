@@ -1,0 +1,95 @@
+.wrapper {
+  width: calc(100% - 250px);
+  margin: auto;
+  margin-top: 90px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+}
+.wrapperbtn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn {
+  margin-top: 20px;
+  width: 120px;
+}
+.textLast strong,
+.textFirst strong {
+  font-size: 3rem;
+  font-weight: 550;
+}
+.titleModal {
+  font-size: 2rem;
+  font-weight: 550;
+}
+// Custom overlay và Modal
+
+.custom-overlay {
+  background: rgb(52 51 50 / 0%);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.custom-overlay.hidden {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    background: rgb(52 51 50 / 0%);
+  }
+  to {
+    background: rgb(52 51 50 / 60%);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    background: rgb(52 51 50 / 60%);
+  }
+  to {
+    background: rgb(52 51 50 / 0%);
+  }
+}
+
+/* Modal content animation */
+.custom-modal {
+  z-index: 1;
+  position: relative;
+  width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  transform: scale(0.7);
+  opacity: 0;
+  animation: zoomIn 0.3s ease forwards;
+}
+
+.custom-modal.hidden {
+  animation: zoomOut 0.3s ease forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7) translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.7) translateY(-20px);
+    opacity: 0;
+  }
+}

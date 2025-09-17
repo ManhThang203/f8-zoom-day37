@@ -1,0 +1,21 @@
+.navItem {
+  position: fixed;
+  top: 25%;
+  left: 10px;
+}
+.item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon {
+  font-size: 2.5rem;
+}
+.title {
+  font-size: 1.1rem;
+  font-weight: 550;
+}
+.active {
+  background: #e8ebed;
+  border-radius: 16px;
+}

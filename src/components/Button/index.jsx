@@ -4,17 +4,17 @@ import PropTypes from "prop-types";
 
 function Button({
   primary = false,
+  outline = false,
   children,
   href,
   className,
   onClick,
-  hover = false,
   size = "medium",
   ...passProps
 }) {
   const classNames = clsx(styles.btn, styles[size], className, {
     [styles.primary]: primary,
-    [styles.hover]: hover,
+    [styles.outline]: outline,
   });
   const Component = href ? "a" : "button";
   return (
@@ -30,6 +30,7 @@ function Button({
 }
 Button.prototype = {
   primary: PropTypes.bool,
+  outline: PropTypes.bool,
   children: PropTypes.node,
   href: PropTypes.string,
   onClick: PropTypes.func,

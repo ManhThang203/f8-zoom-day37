@@ -7,7 +7,17 @@
 }
 .primary {
   color: #fff;
-  background: #a13da1;
+  background: #e16010;
+}
+.outline {
+  color: #e16010;
+  border: 1px solid #e16010;
+  border-radius: 5px;
+  transition: all 0.4s ease;
+  &:hover {
+    color: #fff;
+    background: #e16010;
+  }
 }
 
 // sizes

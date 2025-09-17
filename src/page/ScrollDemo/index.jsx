@@ -1,8 +1,11 @@
+// Component
 import Header from "@/layouts/DefaultLayout/components/Header";
+import Navigation from "@/layouts/DefaultLayout/components/Navigation";
 function scrollDemo() {
   return (
     <>
       <Header />
+      <Navigation />
       <h1
         style={{
           height: "100vh",

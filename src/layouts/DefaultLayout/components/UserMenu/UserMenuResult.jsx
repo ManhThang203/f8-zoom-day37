@@ -26,7 +26,7 @@ function UserMenuResult() {
           lable: "Scroll Demo",
         },
         {
-          to: "#!",
+          to: "/",
           lable: "Bài viết của tôi",
         },
       ],
