@@ -1,0 +1,22 @@
+.btn {
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.primary {
+  color: #fff;
+  background: #a13da1;
+}
+
+// sizes
+.small {
+  padding: 2px 8px;
+}
+.medium {
+  padding: 4px 10px;
+}
+.large {
+  padding: 10px 15px;
+}

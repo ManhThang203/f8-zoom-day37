@@ -1,0 +1,97 @@
+.wrapper {
+  position: relative;
+}
+.iconBell {
+  color: #707070;
+  &:hover {
+    color: #333;
+  }
+}
+.result {
+  position: absolute;
+  right: 9px;
+  width: 52rem;
+}
+.active {
+  position: relative;
+  margin-top: 10px;
+  background: #fdede9;
+  border-radius: 4px;
+}
+.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #3ea6ff;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.titleHeader {
+  font-size: 1.8rem;
+  font-weight: 550;
+}
+.linkTick {
+  padding: 8px;
+  border-radius: 4px;
+  color: #f05123;
+  font-size: 1.4rem;
+  transition: all 0.4s ease;
+  &:hover {
+    background: #f1f1f1;
+  }
+}
+.content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  &:hover {
+    background-color: #1618230d;
+  }
+}
+.avatar {
+  position: relative;
+}
+.avatar .thumbnail {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.avatar .icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: -5px;
+  bottom: 3px;
+}
+.messageWrapper {
+  flex: 1;
+}
+.messageWrapper .titleMessage {
+  color: #707070;
+  font-size: 1.4rem;
+}
+.messageWrapper strong {
+  color: #333;
+  font-weight: 550;
+}
+.messageWrapper .createdTime {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 6px;
+  color: #f05123;
+}

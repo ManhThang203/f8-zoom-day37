@@ -7,12 +7,16 @@ import UserMenu from "@/layouts/DefaultLayout/components/UserMenu";
 import styles from "./Header.module.scss";
 function Header() {
   return (
-    <div className={styles.container}>
-      <AppLogo />
-      <SearchForm />
-      <MyCourses />
-      <Notification />
-      <UserMenu />
+    <div className={styles.header}>
+      <div className={styles.header__inner}>
+        <AppLogo />
+        <SearchForm />
+        <div className={styles.header__actions}>
+          <MyCourses />
+          <Notification />
+          <UserMenu />
+        </div>
+      </div>
     </div>
   );
 }

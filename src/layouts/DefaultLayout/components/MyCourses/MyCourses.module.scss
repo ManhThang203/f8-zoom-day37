@@ -1,0 +1,83 @@
+.wrapper {
+  position: relative;
+}
+.coursesBtn {
+  font-size: 1.3rem;
+}
+.result {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  min-width: 380px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.titleHeadig {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.viewAllBtn {
+  font-size: 1.4rem;
+  color: #f05123;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  &:hover {
+    background-color: #f1f1f1;
+  }
+}
+.courseInfo {
+  flex: 1;
+  margin-top: 8px;
+}
+.content {
+  display: flex;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  &:hover {
+    background-color: #1618230d;
+  }
+}
+.linkThumb,
+.linkTitle {
+  padding: 0;
+}
+.courseThumb {
+  width: 12rem;
+  min-height: 67px;
+  display: block;
+  border-radius: 8px;
+  background-color: #ebebeb;
+  line-height: 67px;
+}
+.courseTitle {
+  font-size: 1.4rem;
+  font-weight: 550;
+}
+.lastCompleted {
+  font-size: 1.2rem;
+  color: #666;
+}
+.progress {
+  position: relative;
+  height: 8px;
+  background-color: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+.progressFill {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #f05123;
+}

@@ -1,0 +1,21 @@
+.dropdown {
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+  border-radius: 10px;
+  padding: 12px 14px;
+  will-change: opacity, transform; // tối ưu hiệu xuất render
+  transform-origin: top center;
+  // both dữ trạng thái đầu tiên khi delay, vừa dữ trạng thái cuối cùng sau khi chạy
+  animation: fadeInUp 0.2s ease-in-out both;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
