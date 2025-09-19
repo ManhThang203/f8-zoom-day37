@@ -4,6 +4,7 @@
   inset: 0;
 }
 .modal {
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,4 +38,41 @@
   margin-top: 10px;
   width: 160px;
   margin-left: auto;
+}
+
+.custom-overlay {
+  background: rgb(52 51 50 / 0%);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.hiddenModal {
+  animation: zoomOut 0.3s ease forwards;
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.7) translateY(-20px);
+    opacity: 0;
+  }
+}
+.hiddenOverlay {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    background: rgb(52 51 50 / 60%);
+  }
+  to {
+    background: rgb(52 51 50 / 0%);
+  }
+}
+
+.modal-open {
+  overflow-y: hidden;
 }

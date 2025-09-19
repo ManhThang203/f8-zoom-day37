@@ -8,7 +8,6 @@ import { useState } from "react";
 import Modal from "@/components/Modal";
 function ModalDemo() {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
   function handeleOpenModal() {
     setIsOpen(true);
   }
@@ -52,6 +51,10 @@ function ModalDemo() {
               closeTimeoutMS={400}
               overlayClassName={styles[`custom-overlay`]}
               className={styles[`custom-modal`]}
+              bodyOpenClassName={"modal-open"}
+              htmlOpenClassName={styles["modal-open"]}
+              shouldCloseOnOverlayClick={true}
+              shouldCloseOnEsc={false}
             >
               <h2 className={styles.titleModal}>Xin chào 😗</h2>
               <p>
@@ -91,55 +94,6 @@ function ModalDemo() {
           iste. Excepturi id magni illo amet et voluptates nulla voluptatem
           deserunt esse placeat nam, facilis aliquid, officiis neque, quis nobis
           ratione cumque corrupti possimus quidem molestias commodi libero
-          eveniet accusantium. Eos. Assumenda, quis corrupti! Totam culpa
-          deleniti doloribus itaque error eligendi exercitationem. Nulla
-          explicabo, dolore cum omnis maxime nemo blanditiis rem deleniti
-          voluptatum sit asperiores exercitationem quisquam alias atque eveniet
-          totam. Magni ipsum adipisci reprehenderit, quae exercitationem quam,
-          autem aut sit necessitatibus, earum accusamus eligendi eos non
-          repellendus iusto delectus quibusdam rerum deserunt. Non ducimus culpa
-          labore obcaecati atque repellendus natus! Voluptatum harum nisi
-          quaerat iste sunt libero temporibus ad molestias suscipit reiciendis.
-          Delectus vero nemo accusamus sunt reiciendis voluptate nulla in
-          dignissimos esse ea beatae minima blanditiis, aperiam fugit possimus.
-          Voluptate quos aspernatur nesciunt aperiam quaerat vitae perspiciatis
-          quae! Veritatis fugit earum quos voluptate officia nostrum distinctio
-          sint. Commodi vel deserunt quaerat libero obcaecati quam beatae
-          similique deleniti reprehenderit fugiat? Similique, eaque harum? Non,
-          beatae possimus molestias culpa ipsa eum rerum vel. Officiis quis,
-          perspiciatis voluptatibus iste, maxime maiores modi quae doloremque
-          sequi quia veritatis nisi, omnis sint. Quisquam, hic? Aliquam tempore
-          iure ea placeat similique possimus, officia veniam aspernatur.
-          Inventore facere repellat unde ab, eveniet nisi, eos cupiditate
-          quibusdam dolores ut dolorem accusamus deserunt, omnis reiciendis
-          pariatur quisquam magni. Eius ducimus, impedit quae minima debitis
-          beatae fugit sit dolore maxime doloremque laborum. Modi accusamus
-          cumque, voluptate obcaecati tempore aperiam incidunt voluptates porro
-          temporibus adipisci ab totam, soluta laborum nemo. Inventore ipsum
-          veniam expedita, beatae sed voluptatem cum ea officiis, incidunt dolor
-          libero natus, molestiae magni amet repellendus iste mollitia sunt
-          consectetur minus repudiandae impedit earum cumque. Praesentium,
-          numquam maxime? Esse eveniet eligendi laborum voluptates harum
-          doloremque eaque architecto repellendus illum ratione, veniam
-          laudantium atque sed possimus nesciunt maxime ut exercitationem,
-          labore enim magni quod iste quasi nostrum maiores? Qui? Assumenda,
-          est. Facilis doloremque eos eveniet voluptatum ea! Voluptates
-          assumenda commodi ex ea quaerat soluta labore rem. Veniam vel numquam
-          excepturi? Placeat at iusto mollitia dolores nobis. Molestiae, animi
-          quia. Enim cupiditate, atque, obcaecati eius dolores laudantium
-          maiores culpa architecto dolorem veritatis cum. Quam obcaecati iste
-          totam sapiente similique officiis molestiae omnis odit dolorem
-          eligendi alias, quaerat, nulla quasi magnam? Eos magnam rerum
-          aspernatur adipisci quas saepe maxime delectus, error, sequi
-          recusandae laborum? Quasi aperiam aut asperiores beatae corporis,
-          nulla voluptates quo quidem, et quod quae molestias hic velit illum.
-          Voluptates perspiciatis unde optio totam quasi, beatae sed quam
-          nostrum laborum quo sit dolores distinctio ex velit earum enim
-          quibusdam. Impedit commodi omnis corrupti harum repudiandae quaerat
-          expedita iure sequi! Deleniti sapiente sit voluptatum facere veritatis
-          eligendi beatae sed, soluta, suscipit voluptates voluptatibus. Labore
-          veniam corrupti maxime minima numquam officiis animi! Odio aperiam
-          eaque quaerat animi dolores minus accusantium necessitatibus.
         </p>
       </div>
     </>
