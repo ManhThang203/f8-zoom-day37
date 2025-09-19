@@ -1,0 +1,38 @@
+.btnShow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+.icon {
+  font-size: 2rem;
+}
+.hiddenBtn {
+  animation: fadeOut 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}

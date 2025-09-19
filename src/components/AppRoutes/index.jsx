@@ -6,11 +6,13 @@ import Home from "@/page/Home";
 import Profile from "@/page/Profile";
 import ModalDemo from "@/page/ModalDemo";
 import ScrollDemo from "@/page/ScrollDemo";
+import GoToTop from "@/components/GoToTop";
 
 // import Header from "@/layouts/DefaultLayout/components/Header";
 function AppRouter() {
   return (
     <HashRouter>
+      <GoToTop />
       <Routes>
         {/* DefaultLayout layout */}
         <Route path="/" element={<DefaultLayout />}>

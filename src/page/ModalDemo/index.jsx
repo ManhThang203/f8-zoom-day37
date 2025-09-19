@@ -6,6 +6,7 @@ import styles from "./ModalDemo.module.scss";
 import Button from "@/components/Button";
 import { useState } from "react";
 import Modal from "@/components/Modal";
+import GoToTop from "@/components/GoToTop";
 function ModalDemo() {
   const [isOpen, setIsOpen] = useState(false);
   function handeleOpenModal() {
@@ -14,6 +15,7 @@ function ModalDemo() {
   function handeleClosekModal() {
     setIsOpen(false);
   }
+
   return (
     <>
       <Header />
@@ -93,9 +95,146 @@ function ModalDemo() {
           quod debitis voluptas unde quibusdam laborum eius? Quidem labore qui
           iste. Excepturi id magni illo amet et voluptates nulla voluptatem
           deserunt esse placeat nam, facilis aliquid, officiis neque, quis nobis
+          ratione cumque corrupti possimus quidem molestias commodi libero A
+          maxime tempore at autem totam quidem molestiae rem aliquid asperiores
+          dolorum quia eos veritatis, esse dicta quisquam deleniti enim quas
+          vel. Ipsam neque magni accusamus vero voluptate accusantium? Nemo
+          voluptates fugit adipisci non quae blanditiis maiores iusto amet
+          perferendis quidem deleniti, cupiditate repudiandae. Quos ducimus
+          totam, soluta ipsam accusamus consectetur quod. Ratione amet voluptas
+          maiores accusantium. Deleniti eius ullam unde placeat repellat
+          consequatur accusamus ipsa voluptatem cupiditate laudantium quisquam
+          distinctio nostrum dolores illo tempora sapiente excepturi quasi ab,
+          dolorum porro! Inventore? Quos minus ea, officiis facere eius possimus
+          voluptates facilis autem maiores consequatur earum omnis ut molestias
+          repellat quas tempore dolores odio temporibus nemo voluptas fuga.
+          Recusandae dolores cumque temporibus quasi! Quae nobis adipisci non
+          rerum ex dignissimos voluptate exercitationem eveniet, distinctio
+          illum porro alias, perspiciatis inventore molestias, obcaecati fugiat
+          quod debitis voluptas unde quibusdam laborum eius? Quidem labore qui
+          iste. Excepturi id magni illo amet et voluptates nulla voluptatem
+          deserunt esse placeat nam, facilis aliquid, officiis neque, quis nobis
+          ratione cumque corrupti possimus quidem molestias commodi libero A
+          maxime tempore at autem totam quidem molestiae rem aliquid asperiores
+          dolorum quia eos veritatis, esse dicta quisquam deleniti enim quas
+          vel. Ipsam neque magni accusamus vero voluptate accusantium? Nemo
+          voluptates fugit adipisci non quae blanditiis maiores iusto amet
+          perferendis quidem deleniti, cupiditate repudiandae. Quos ducimus
+          totam, soluta ipsam accusamus consectetur quod. Ratione amet voluptas
+          maiores accusantium. Deleniti eius ullam unde placeat repellat
+          consequatur accusamus ipsa voluptatem cupiditate laudantium quisquam
+          distinctio nostrum dolores illo tempora sapiente excepturi quasi ab,
+          dolorum porro! Inventore? Quos minus ea, officiis facere eius possimus
+          voluptates facilis autem maiores consequatur earum omnis ut molestias
+          repellat quas tempore dolores odio temporibus nemo voluptas fuga.
+          Recusandae dolores cumque temporibus quasi! Quae nobis adipisci non
+          rerum ex dignissimos voluptate exercitationem eveniet, distinctio
+          illum porro alias, perspiciatis inventore molestias, obcaecati fugiat
+          quod debitis voluptas unde quibusdam laborum eius? Quidem labore qui
+          iste. Excepturi id magni illo amet et voluptates nulla voluptatem
+          deserunt esse placeat nam, facilis aliquid, officiis neque, quis nobis
+          ratione cumque corrupti possimus quidem molestias commodi libero A
+          maxime tempore at autem totam quidem molestiae rem aliquid asperiores
+          dolorum quia eos veritatis, esse dicta quisquam deleniti enim quas
+          vel. Ipsam neque magni accusamus vero voluptate accusantium? Nemo
+          voluptates fugit adipisci non quae blanditiis maiores iusto amet
+          perferendis quidem deleniti, cupiditate repudiandae. Quos ducimus
+          totam, soluta ipsam accusamus consectetur quod. Ratione amet voluptas
+          maiores accusantium. Deleniti eius ullam unde placeat repellat
+          consequatur accusamus ipsa voluptatem cupiditate laudantium quisquam
+          distinctio nostrum dolores illo tempora sapiente excepturi quasi ab,
+          dolorum porro! Inventore? Quos minus ea, officiis facere eius possimus
+          voluptates facilis autem maiores consequatur earum omnis ut molestias
+          repellat quas tempore dolores odio temporibus nemo voluptas fuga.
+          Recusandae dolores cumque temporibus quasi! Quae nobis adipisci non
+          rerum ex dignissimos voluptate exercitationem eveniet, distinctio
+          illum porro alias, perspiciatis inventore molestias, obcaecati fugiat
+          quod debitis voluptas unde quibusdam laborum eius? Quidem labore qui
+          iste. Excepturi id magni illo amet et voluptates nulla voluptatem
+          deserunt esse placeat nam, facilis aliquid, officiis neque, quis nobis
+          ratione cumque corrupti possimus quidem molestias commodi libero
+        </p>
+        <p className={styles.textLast}>
+          <strong>L</strong>orem ipsum dolor, sit amet consectetur adipisicing
+          elit. A maxime tempore at autem totam quidem molestiae rem aliquid
+          asperiores dolorum quia eos veritatis, esse dicta quisquam deleniti
+          enim quas vel. Ipsam neque magni accusamus vero voluptate accusantium?
+          Nemo voluptates fugit adipisci non quae blanditiis maiores iusto amet
+          perferendis quidem deleniti, cupiditate repudiandae. Quos ducimus
+          totam, soluta ipsam accusamus consectetur quod. Ratione amet voluptas
+          maiores accusantium. Deleniti eius ullam unde placeat repellat
+          consequatur accusamus ipsa voluptatem cupiditate laudantium quisquam
+          distinctio nostrum dolores illo tempora sapiente excepturi quasi ab,
+          dolorum porro! Inventore? Quos minus ea, officiis facere eius possimus
+          voluptates facilis autem maiores consequatur earum omnis ut molestias
+          repellat quas tempore dolores odio temporibus nemo voluptas fuga.
+          Recusandae dolores cumque temporibus quasi! Quae nobis adipisci non
+          rerum ex dignissimos voluptate exercitationem eveniet, distinctio
+          illum porro alias, perspiciatis inventore molestias, obcaecati fugiat
+          quod debitis voluptas unde quibusdam laborum eius? Quidem labore qui
+          iste. Excepturi id magni illo amet et voluptates nulla voluptatem
+          deserunt esse placeat nam, facilis aliquid, officiis neque, quis nobis
+          ratione cumque corrupti possimus quidem molestias commodi libero A
+          maxime tempore at autem totam quidem molestiae rem aliquid asperiores
+          dolorum quia eos veritatis, esse dicta quisquam deleniti enim quas
+          vel. Ipsam neque magni accusamus vero voluptate accusantium? Nemo
+          voluptates fugit adipisci non quae blanditiis maiores iusto amet
+          perferendis quidem deleniti, cupiditate repudiandae. Quos ducimus
+          totam, soluta ipsam accusamus consectetur quod. Ratione amet voluptas
+          maiores accusantium. Deleniti eius ullam unde placeat repellat
+          consequatur accusamus ipsa voluptatem cupiditate laudantium quisquam
+          distinctio nostrum dolores illo tempora sapiente excepturi quasi ab,
+          dolorum porro! Inventore? Quos minus ea, officiis facere eius possimus
+          voluptates facilis autem maiores consequatur earum omnis ut molestias
+          repellat quas tempore dolores odio temporibus nemo voluptas fuga.
+          Recusandae dolores cumque temporibus quasi! Quae nobis adipisci non
+          rerum ex dignissimos voluptate exercitationem eveniet, distinctio
+          illum porro alias, perspiciatis inventore molestias, obcaecati fugiat
+          quod debitis voluptas unde quibusdam laborum eius? Quidem labore qui
+          iste. Excepturi id magni illo amet et voluptates nulla voluptatem
+          deserunt esse placeat nam, facilis aliquid, officiis neque, quis nobis
+          ratione cumque corrupti possimus quidem molestias commodi libero A
+          maxime tempore at autem totam quidem molestiae rem aliquid asperiores
+          dolorum quia eos veritatis, esse dicta quisquam deleniti enim quas
+          vel. Ipsam neque magni accusamus vero voluptate accusantium? Nemo
+          voluptates fugit adipisci non quae blanditiis maiores iusto amet
+          perferendis quidem deleniti, cupiditate repudiandae. Quos ducimus
+          totam, soluta ipsam accusamus consectetur quod. Ratione amet voluptas
+          maiores accusantium. Deleniti eius ullam unde placeat repellat
+          consequatur accusamus ipsa voluptatem cupiditate laudantium quisquam
+          distinctio nostrum dolores illo tempora sapiente excepturi quasi ab,
+          dolorum porro! Inventore? Quos minus ea, officiis facere eius possimus
+          voluptates facilis autem maiores consequatur earum omnis ut molestias
+          repellat quas tempore dolores odio temporibus nemo voluptas fuga.
+          Recusandae dolores cumque temporibus quasi! Quae nobis adipisci non
+          rerum ex dignissimos voluptate exercitationem eveniet, distinctio
+          illum porro alias, perspiciatis inventore molestias, obcaecati fugiat
+          quod debitis voluptas unde quibusdam laborum eius? Quidem labore qui
+          iste. Excepturi id magni illo amet et voluptates nulla voluptatem
+          deserunt esse placeat nam, facilis aliquid, officiis neque, quis nobis
+          ratione cumque corrupti possimus quidem molestias commodi libero A
+          maxime tempore at autem totam quidem molestiae rem aliquid asperiores
+          dolorum quia eos veritatis, esse dicta quisquam deleniti enim quas
+          vel. Ipsam neque magni accusamus vero voluptate accusantium? Nemo
+          voluptates fugit adipisci non quae blanditiis maiores iusto amet
+          perferendis quidem deleniti, cupiditate repudiandae. Quos ducimus
+          totam, soluta ipsam accusamus consectetur quod. Ratione amet voluptas
+          maiores accusantium. Deleniti eius ullam unde placeat repellat
+          consequatur accusamus ipsa voluptatem cupiditate laudantium quisquam
+          distinctio nostrum dolores illo tempora sapiente excepturi quasi ab,
+          dolorum porro! Inventore? Quos minus ea, officiis facere eius possimus
+          voluptates facilis autem maiores consequatur earum omnis ut molestias
+          repellat quas tempore dolores odio temporibus nemo voluptas fuga.
+          Recusandae dolores cumque temporibus quasi! Quae nobis adipisci non
+          rerum ex dignissimos voluptate exercitationem eveniet, distinctio
+          illum porro alias, perspiciatis inventore molestias, obcaecati fugiat
+          quod debitis voluptas unde quibusdam laborum eius? Quidem labore qui
+          iste. Excepturi id magni illo amet et voluptates nulla voluptatem
+          deserunt esse placeat nam, facilis aliquid, officiis neque, quis nobis
           ratione cumque corrupti possimus quidem molestias commodi libero
         </p>
       </div>
+      <footer className={styles.footer}>Footer</footer>
     </>
   );
 }
