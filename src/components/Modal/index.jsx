@@ -8,13 +8,14 @@ import styles from "./Modal.module.scss";
 import { IoCloseOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+
 function Modal({
   isOpen,
   children,
   onRequestClose,
   onAfterOpen,
   onAfterClose,
-  closeTimeoutMS = 0,
+  closeTimeoutMS = 200,
   overlayClassName,
   className,
   bodyOpenClassName,
@@ -23,24 +24,25 @@ function Modal({
   shouldCloseOnEsc = true,
 }) {
   const [isHidden, setIsHidden] = useState(!isOpen);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   const handleRequestClose = () => {
-    // bấm nút thì add class hidden luôn
     setIsHidden(true);
     setTimeout(onRequestClose, closeTimeoutMS);
   };
+
   useEffect(() => {
     if (isOpen) {
-      onAfterOpen();
+      setIsHidden(false); // Đặt isHidden = false khi modal mở
+      onAfterOpen?.();
     } else {
-      onAfterClose();
+      onAfterClose?.();
     }
-    // Clean Up
+
     return () => {
-      onAfterClose();
+      onAfterClose?.();
     };
-  }, [isOpen, onAfterOpen, onRequestClose, onAfterClose]);
-  // xử lý đóng modal khi
+  }, [isOpen, onAfterOpen, onAfterClose]);
+
   useEffect(() => {
     if (!shouldCloseOnEsc) return;
 
@@ -49,43 +51,49 @@ function Modal({
         handleRequestClose();
       }
     };
+
     if (isOpen) {
       document.addEventListener("keydown", handle);
     }
-    // Clean Up
+
     return () => {
       document.removeEventListener("keydown", handle);
     };
-  }, [isOpen, isHidden, handleRequestClose, shouldCloseOnEsc, className]);
-  // xử thêm class open vào body và unmount khỏi body
-  useEffect(() => {
-    document.body.classList.add(bodyOpenClassName);
-    document.documentElement.classList.add(htmlOpenClassName);
-    document.body.style.overflowY = "hidden";
+  }, [isOpen, shouldCloseOnEsc]);
 
-    // Clean Up
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add(bodyOpenClassName || "modal-open");
+      document.documentElement.classList.add(htmlOpenClassName || "modal-open");
+      document.body.style.overflowY = "hidden";
+    }
+
     return () => {
-      document.body.classList.remove(bodyOpenClassName);
-      document.documentElement.classList.remove(htmlOpenClassName);
+      document.body.classList.remove(bodyOpenClassName || "modal-open");
+      document.documentElement.classList.remove(
+        htmlOpenClassName || "modal-open"
+      );
       document.body.style.overflowY = "";
     };
-  }, [bodyOpenClassName, htmlOpenClassName]);
+  }, [isOpen, bodyOpenClassName, htmlOpenClassName]);
+
   if (!isOpen && isHidden) return null;
+
   return (
     <div className={styles.modal}>
       <div
         className={clsx(
           styles.content,
-          className,
+          className, // Custom className sẽ được apply
           (isHidden || !isOpen) && styles.hiddenModal
         )}
       >
-        {/* btn close */}
         <Button className={styles.btnClose} onClick={handleRequestClose}>
           <IoCloseOutline className={styles.icon} />
         </Button>
-        {/* Body */}
+
         <div className={styles.body}>{children}</div>
+
         <div className={styles.btn}>
           <Button size="large" outline onClick={handleRequestClose}>
             Cancel
@@ -95,10 +103,11 @@ function Modal({
           </Button>
         </div>
       </div>
+
       <div
         className={clsx(
           styles.overlay,
-          overlayClassName,
+          overlayClassName, // Custom overlayClassName sẽ được apply
           (isHidden || !isOpen) && styles.hiddenOverlay
         )}
         onClick={() => {
@@ -106,11 +115,12 @@ function Modal({
             handleRequestClose();
           }
         }}
-      ></div>
+      />
     </div>
   );
 }
-Modal.prototype = {
+
+Modal.propTypes = {
   isOpen: PropTypes.bool,
   shouldCloseOnOverlayClick: PropTypes.bool,
   shouldCloseOnEsc: PropTypes.bool,
@@ -123,4 +133,5 @@ Modal.prototype = {
   className: PropTypes.string,
   closeTimeoutMS: PropTypes.number,
 };
+
 export default Modal;

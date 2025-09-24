@@ -8,10 +8,29 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
-.wrapperbtn {
+.titleHeader {
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 550;
+  text-align: center;
+  color: #e16010;
+}
+.demoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  border-radius: 10px;
+  background: #dbd7d7;
+}
+.titleText {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.content {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 .btn {
@@ -30,7 +49,7 @@
 // Custom overlay và Modal
 
 .custom-overlay {
-  background: rgb(52 51 50 / 0%);
+  background: rgba(71, 7, 2, 0.7) !important;
   backdrop-filter: blur(8px);
   animation: fadeIn 0.3s ease forwards;
 }
@@ -51,7 +70,7 @@
   width: 500px;
   padding: 20px;
   border-radius: 10px;
-  background: #fff;
+  background: #8ee4eb !important;
   transform: scale(0.7);
   opacity: 0;
   animation: zoomIn 0.3s ease forwards;
@@ -71,11 +90,4 @@
 // modal-open với body để ko hiện thanh cuộn
 .modal-open {
   overflow-y: hidden;
-}
-
-.footer {
-  margin-top: 50px;
-  font-size: 2rem;
-  font-weight: 550;
-  text-align: center;
 }

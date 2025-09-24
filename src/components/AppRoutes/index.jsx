@@ -2,10 +2,10 @@ import { HashRouter, Routes, Route } from "react-router";
 // Layout
 import DefaultLayout from "@/layouts/DefaultLayout";
 // Page
-import Home from "@/page/Home";
-import Profile from "@/page/Profile";
-import ModalDemo from "@/page/ModalDemo";
-import ScrollDemo from "@/page/ScrollDemo";
+import Home from "@/pages/Home";
+import Profile from "@/pages/Profile";
+import ModalDemo from "@/pages/ModalDemo";
+import ScrollDemo from "@/pages/ScrollDemo";
 import GoToTop from "@/components/GoToTop";
 
 // import Header from "@/layouts/DefaultLayout/components/Header";

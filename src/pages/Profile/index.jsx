@@ -11,13 +11,15 @@ function Profile() {
   const [previewUrl, setPreviewUrl] = useState(null);
   useEffect(() => {
     // Clean Up
-    return () => {};
+    return () => {
+      URL.revokeObjectURL(previewUrl);
+    };
   }, [previewUrl]);
   const handleChangeImg = (e) => {
     const img = e.target.files[0];
-    console.log(img);
     //  createObjectURL chuyển file ảnh thành 1 đường dẫn tạm thời trỏ đến dữ liệu nhị phân (Blob / File)
     const previewUrl = URL.createObjectURL(img);
+    console.log(previewUrl);
     setPreviewUrl(previewUrl);
   };
   return (

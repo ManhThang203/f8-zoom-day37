@@ -9,6 +9,28 @@
   align-items: center;
   justify-content: center;
 }
+.content {
+  z-index: 1;
+  position: relative;
+  width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  transform: scale(0.7);
+  opacity: 0;
+  animation: zoomIn 0.5s ease forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7) translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
 .btnClose {
   z-index: 1;
   position: absolute;
@@ -40,12 +62,19 @@
   margin-left: auto;
 }
 
-.custom-overlay {
+.overlay {
   background: rgb(52 51 50 / 0%);
   backdrop-filter: blur(8px);
   animation: fadeIn 0.3s ease forwards;
 }
-
+@keyframes fadeIn {
+  from {
+    background: rgb(52 51 50 / 0%);
+  }
+  to {
+    background: rgb(52 51 50 / 60%);
+  }
+}
 .hiddenModal {
   animation: zoomOut 0.3s ease forwards;
 }
