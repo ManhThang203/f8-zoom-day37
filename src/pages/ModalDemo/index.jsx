@@ -4,22 +4,28 @@ import Navigation from "@/layouts/DefaultLayout/components/Navigation";
 // Scss
 import styles from "./ModalDemo.module.scss";
 import Button from "@/components/Button";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Modal from "@/components/Modal";
 import GoToTop from "@/components/GoToTop";
+
 function ModalDemo() {
+  // State
   const [isModalBassic, setModalBassic] = useState(false);
   const [isModalAnimation, setModalAnimation] = useState(false);
   const [isModalNoClickOverlay, setModalNoClickOverlay] = useState(false);
   const [isModalNoCloseEsc, setModalNoCloseEsc] = useState(false);
   const [isModalCustom, setModalCustom] = useState(false);
   const [isModalCallbacks, setModalCallbacks] = useState(false);
+  const [isModalRef, setisModalRef] = useState(false);
+
+  // Ref
+  const modalRef = useRef(null);
 
   return (
     <>
       <Header />
       <Navigation />
-      <div className={styles.wrapper}>
+      <section className={styles.wrapper}>
         <h1 className={styles.titleHeader}>Demo Modal</h1>
         <div className={styles.content}>
           <div className={styles.demoSection}>
@@ -182,7 +188,39 @@ function ModalDemo() {
             )}
           </div>
         </div>
-      </div>
+      </section>
+      <section className={styles.wrapper}>
+        <h1 className={styles.titleHeader}>Demo Modal</h1>
+        <div className={styles.btn}>
+          <Button
+            size="large"
+            outline
+            className={styles.btn}
+            onClick={() => setisModalRef(true)}
+          >
+            Open Modal
+          </Button>
+        </div>
+        <Modal
+          ref={modalRef}
+          isOpen={isModalRef}
+          onRequestClose={() => setisModalRef(false)}
+          closeTimeoutMS={500}
+          onAfterOpen={() => console.log("Modal đã mở")}
+          onAfterClose={() => console.log("Modal đã đóng")}
+          bodyOpenClassName="modal-open"
+          htmlOpenClassName="modal-open"
+          shouldCloseOnOverlayClick={true}
+          shouldCloseOnEsc={true}
+        >
+          <h2 className={styles.titleModal}>Xin chào 😗</h2>
+          <p>
+            Inventore facere repellat unde ab, eveniet nisi, eos cupiditate
+            quibusdam dolores ut dolorem accusamus deserunt, omnis reiciendis
+            pariatur quisquam magni.
+          </p>
+        </Modal>
+      </section>
     </>
   );
 }
