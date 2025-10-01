@@ -14,7 +14,6 @@ function PerformanceDemo() {
   const [count, setCount] = useState(0);
   const [name, setName] = useState("User A");
   const [items, setItems] = useState([]);
-  // console.log(items);
 
   // xử lý call api
   useEffect(() => {
@@ -34,10 +33,15 @@ function PerformanceDemo() {
   // hàm xử lý change Name
   const handleChangeName = useCallback(() => {
     if (items.length === 0) return;
-    const randomIndex = Math.floor(Math.random() * items.length);
-    const randomName = items[randomIndex].name;
+
+    let randomIndex;
+    let randomName;
+    do {
+      randomIndex = Math.floor(Math.random() * items.length);
+      randomName = items[randomIndex].name;
+    } while (randomName === name && items.length > 1);
     setName(randomName);
-  }, []); // deps không thay đổi
+  }, [items, name]);
   // hàm xử lý khi add Items
   const handleAddItems = useCallback(() => {
     setItems((prevItems) => [

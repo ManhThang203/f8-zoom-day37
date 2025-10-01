@@ -9,6 +9,7 @@ import ModalDemo from "@/pages/ModalDemo";
 import ScrollDemo from "@/pages/ScrollDemo";
 import GoToTop from "@/components/GoToTop";
 import PerformanceDemo from "@/pages/PerformanceDemo";
+import FocusDemo from "@/pages/FocusDemo";
 
 // import Header from "@/layouts/DefaultLayout/components/Header";
 function AppRouter() {
@@ -23,6 +24,7 @@ function AppRouter() {
           <Route path="/modal-demo" element={<ModalDemo />} />
           <Route path="/scroll-demo" element={<ScrollDemo />} />
           <Route path="/performance-demo" element={<PerformanceDemo />} />
+          <Route path="/focus-demo" element={<FocusDemo />} />
           <Route />
         </Route>
       </Routes>

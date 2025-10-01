@@ -8,6 +8,7 @@ import { RxAvatar } from "react-icons/rx";
 import { SiModal } from "react-icons/si";
 import { PiScroll } from "react-icons/pi";
 import { CgPerformance } from "react-icons/cg";
+import { RiFocus2Line } from "react-icons/ri";
 
 function Navigation() {
   const navItem = [
@@ -35,6 +36,11 @@ function Navigation() {
       to: "/performance-demo",
       lable: "Performance Demo",
       icon: <CgPerformance />,
+    },
+    {
+      to: "/focus-demo",
+      lable: "Focus Demo",
+      icon: <RiFocus2Line />,
     },
   ];
   return (
