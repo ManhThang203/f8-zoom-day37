@@ -1,6 +1,6 @@
 .wrapper {
   position: relative;
-  width: calc(100% - 250px);
+  width: calc(100% - 390px);
   margin: 90px auto;
   padding: 24px;
   background: #fff;
@@ -48,7 +48,7 @@
 }
 // Custom overlay và Modal
 
-.custom-overlay {
+.customOverlay {
   background: rgba(71, 7, 2, 0.7) !important;
   backdrop-filter: blur(8px);
   animation: fadeIn 0.3s ease forwards;
@@ -64,7 +64,7 @@
 }
 
 /* Modal content animation */
-.custom-modal {
+.customModalBody {
   z-index: 1;
   position: relative;
   width: 500px;

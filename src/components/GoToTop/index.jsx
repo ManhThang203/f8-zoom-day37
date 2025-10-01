@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router";
 import styles from "./GoToTop.module.scss";
 // Icon
@@ -10,6 +10,7 @@ import clsx from "clsx";
 function GoToTop() {
   const location = useLocation();
   const [isBtnshow, setIsBtnShow] = useState(false);
+  const init = useRef(false);
   // xử lý khi đổi pathname
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,6 +20,7 @@ function GoToTop() {
     const handleScroll = () => {
       if (window.scrollY >= 300) {
         setIsBtnShow(true);
+        init.current = true;
       } else {
         setIsBtnShow(false);
       }
@@ -33,14 +35,16 @@ function GoToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <Button
-      size="large"
-      outline
-      onClick={handleScrollTop}
-      className={clsx(styles.btnShow, !isBtnshow && styles.hiddenBtn)}
-    >
-      <GoMoveToTop className={styles.icon} />
-    </Button>
+    init.current && (
+      <Button
+        size="large"
+        outline
+        onClick={handleScrollTop}
+        className={clsx(styles.btnShow, !isBtnshow && styles.hiddenBtn)}
+      >
+        <GoMoveToTop className={styles.icon} />
+      </Button>
+    )
   );
 }
 export default GoToTop;

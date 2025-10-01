@@ -1,0 +1,61 @@
+// Wrapper + Header
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.container {
+  padding: 25px 30px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.25;
+  text-align: center;
+}
+.subtitle {
+  margin-top: -5px;
+  font-size: 1.6rem;
+  color: #6b7280;
+  text-align: center;
+}
+// girl
+.girl {
+  margin-top: 10px;
+  display: flex;
+  gap: 25px;
+}
+.counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px #1f293712;
+}
+.meta {
+  margin-top: -2px;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #171818;
+  text-align: center;
+}
+.meta span {
+  margin-left: 10px;
+  color: #ff5d2e;
+}
+// Items
+.items {
+  padding: 15px;
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px #1f293712;
+}

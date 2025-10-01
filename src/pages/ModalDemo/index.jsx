@@ -36,15 +36,6 @@ function ModalDemo() {
               <Modal
                 isOpen={isModalBassic}
                 onRequestClose={() => setModalBassic(false)}
-                // onAfterOpen={() => console.log("Modal đã mở")}
-                // onAfterClose={() => console.log("Modal đã đóng")}
-                // closeTimeoutMS={400}
-                // overlayClassName={styles[`custom-overlay`]}
-                // className={styles[`custom-modal`]}
-                // bodyOpenClassName={"modal-open"}
-                // htmlOpenClassName={styles["modal-open"]}
-                // shouldCloseOnOverlayClick={true}
-                // shouldCloseOnEsc={false}
               >
                 <h2 className={styles.titleModal}>Xin chào 😗</h2>
                 <p>
@@ -61,7 +52,7 @@ function ModalDemo() {
               size="large"
               outline
               className={styles.btn}
-              onClick={() => setModalBassic(true)}
+              onClick={() => setModalAnimation(true)}
             >
               Open Modal
             </Button>
@@ -69,6 +60,7 @@ function ModalDemo() {
               <Modal
                 isOpen={isModalAnimation}
                 onRequestClose={() => setModalAnimation(false)}
+                closeTimeoutMS={500}
               >
                 <h2 className={styles.titleModal}>Xin chào 😗</h2>
                 <p>
@@ -146,8 +138,8 @@ function ModalDemo() {
                 isOpen={isModalCustom}
                 onRequestClose={() => setModalCustom(false)}
                 closeTimeoutMS={500}
-                overlayClassName={styles[`custom-overlay`]}
-                className={styles[`custom-modal`]}
+                overlayClassName={styles.customOverlay}
+                className={styles.customModalBody}
               >
                 <h2 className={styles.titleModal}>Xin chào 😗</h2>
                 <p>
@@ -175,6 +167,10 @@ function ModalDemo() {
                 closeTimeoutMS={500}
                 onAfterOpen={() => console.log("Modal đã mở")}
                 onAfterClose={() => console.log("Modal đã đóng")}
+                bodyOpenClassName="modal-open"
+                htmlOpenClassName="modal-open"
+                shouldCloseOnOverlayClick={true}
+                shouldCloseOnEsc={true}
               >
                 <h2 className={styles.titleModal}>Xin chào 😗</h2>
                 <p>

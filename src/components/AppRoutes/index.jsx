@@ -1,3 +1,4 @@
+// React
 import { HashRouter, Routes, Route } from "react-router";
 // Layout
 import DefaultLayout from "@/layouts/DefaultLayout";
@@ -7,6 +8,7 @@ import Profile from "@/pages/Profile";
 import ModalDemo from "@/pages/ModalDemo";
 import ScrollDemo from "@/pages/ScrollDemo";
 import GoToTop from "@/components/GoToTop";
+import PerformanceDemo from "@/pages/PerformanceDemo";
 
 // import Header from "@/layouts/DefaultLayout/components/Header";
 function AppRouter() {
@@ -20,6 +22,7 @@ function AppRouter() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/modal-demo" element={<ModalDemo />} />
           <Route path="/scroll-demo" element={<ScrollDemo />} />
+          <Route path="/performance-demo" element={<PerformanceDemo />} />
           <Route />
         </Route>
       </Routes>

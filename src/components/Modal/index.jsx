@@ -15,7 +15,7 @@ function Modal({
   onRequestClose,
   onAfterOpen,
   onAfterClose,
-  closeTimeoutMS = 200,
+  closeTimeoutMS = 0,
   overlayClassName,
   className,
   bodyOpenClassName,
@@ -25,6 +25,7 @@ function Modal({
 }) {
   const [isHidden, setIsHidden] = useState(!isOpen);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleRequestClose = () => {
     setIsHidden(true);
     setTimeout(onRequestClose, closeTimeoutMS);
@@ -33,7 +34,9 @@ function Modal({
   useEffect(() => {
     if (isOpen) {
       setIsHidden(false); // Đặt isHidden = false khi modal mở
-      onAfterOpen?.();
+      setTimeout(() => {
+        onAfterOpen?.();
+      }, closeTimeoutMS);
     } else {
       onAfterClose?.();
     }
@@ -41,7 +44,7 @@ function Modal({
     return () => {
       onAfterClose?.();
     };
-  }, [isOpen, onAfterOpen, onAfterClose]);
+  }, [isOpen, onAfterOpen, onAfterClose, closeTimeoutMS]);
 
   useEffect(() => {
     if (!shouldCloseOnEsc) return;
@@ -59,7 +62,7 @@ function Modal({
     return () => {
       document.removeEventListener("keydown", handle);
     };
-  }, [isOpen, shouldCloseOnEsc]);
+  }, [isOpen, shouldCloseOnEsc, handleRequestClose]);
 
   useEffect(() => {
     if (isOpen) {

@@ -7,6 +7,7 @@ import { GoHome } from "react-icons/go";
 import { RxAvatar } from "react-icons/rx";
 import { SiModal } from "react-icons/si";
 import { PiScroll } from "react-icons/pi";
+import { CgPerformance } from "react-icons/cg";
 
 function Navigation() {
   const navItem = [
@@ -29,6 +30,11 @@ function Navigation() {
       to: "/scroll-demo",
       lable: "Scroll Demo",
       icon: <PiScroll />,
+    },
+    {
+      to: "/performance-demo",
+      lable: "Performance Demo",
+      icon: <CgPerformance />,
     },
   ];
   return (
