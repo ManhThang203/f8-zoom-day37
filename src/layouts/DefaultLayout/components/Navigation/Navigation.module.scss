@@ -2,12 +2,39 @@
   position: fixed;
   top: 16%;
   left: 10px;
+
   max-height: 500px;
   background: #fff;
   padding: 10px;
   border-radius: 10px;
   overflow: hidden;
+  transform: translateX(-157px);
+  &:hover {
+    animation: slideOut 0.4s ease-in-out forwards;
+  }
+  &:not(:hover) {
+    animation: slideIn 0.4s ease-in-out forwards;
+  }
 }
+
+@keyframes slideOut {
+  from {
+    transform: translateX(-157px);
+  }
+  to {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-157px);
+  }
+}
+
 .wrapper {
   max-height: 480px;
   overflow: auto;

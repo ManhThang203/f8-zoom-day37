@@ -1,8 +1,5 @@
 // React
 import { useCallback, useEffect, useState } from "react";
-// layouts
-import Header from "@/layouts/DefaultLayout/components/Header";
-import Navigation from "@/layouts/DefaultLayout/components/Navigation";
 // components
 import CounterDisplay from "./components/CounterDisplay";
 import ActionButtons from "./components/ActionButtons";
@@ -56,8 +53,6 @@ function PerformanceDemo() {
 
   return (
     <>
-      <Header />
-      <Navigation />
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <section className={styles.content}>

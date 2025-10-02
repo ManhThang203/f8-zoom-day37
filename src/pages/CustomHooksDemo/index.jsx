@@ -2,9 +2,7 @@
 import PostsList from "./postsList";
 import UsersList from "./UsersList";
 import clsx from "clsx";
-// Layouts
-import Header from "@/layouts/DefaultLayout/components/Header";
-import Navigation from "@/layouts/DefaultLayout/components/Navigation";
+
 // Hooks
 import { useToggle } from "@/hooks";
 // Scss
@@ -20,8 +18,6 @@ function CustomHooksDemo() {
 
   return (
     <>
-      <Header />
-      <Navigation />
       <div className={styles.wrapper}>
         <div
           className={clsx(

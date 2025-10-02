@@ -5,8 +5,6 @@ import Navigation from "@/layouts/DefaultLayout/components/Navigation";
 function Home() {
   return (
     <>
-      <Header />
-      <Navigation />
       <Loading />
     </>
   );

@@ -3,9 +3,6 @@ import { useRef, useState } from "react";
 // Components
 import CustomInput from "@/components/CustomInput";
 import Button from "@/components/Button";
-// Layouts
-import Header from "@/layouts/DefaultLayout/components/Header";
-import Navigation from "@/layouts/DefaultLayout/components/Navigation";
 // Scss
 import styles from "./FocusDemo.module.scss";
 function FocusDemo() {
@@ -37,8 +34,6 @@ function FocusDemo() {
 
   return (
     <>
-      <Header />
-      <Navigation />
       <div className={styles.wrapper}>
         <div className={styles.contaier}>
           <CustomInput

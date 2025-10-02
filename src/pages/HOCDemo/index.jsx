@@ -4,9 +4,6 @@ import { useState } from "react";
 import ProductList from "@/components/ProductList";
 import UserProfile from "@/components/UserProfile";
 import Button from "@/components/Button";
-// Layouts
-import Header from "@/layouts/DefaultLayout/components/Header";
-import Navigation from "@/layouts/DefaultLayout/components/Navigation";
 // Scss
 import styles from "./HOCDemo.module.scss";
 
@@ -16,8 +13,6 @@ function HOCDemo() {
   const [productLoading, setProductLoading] = useState(false);
   return (
     <>
-      <Header />
-      <Navigation />
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <h1 className={styles.title}>HOC Pattern - withLoading</h1>

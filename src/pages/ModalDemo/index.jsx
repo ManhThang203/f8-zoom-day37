@@ -1,12 +1,11 @@
-// Component
-import Header from "@/layouts/DefaultLayout/components/Header";
-import Navigation from "@/layouts/DefaultLayout/components/Navigation";
+// React
+import { useState } from "react";
 // Scss
 import styles from "./ModalDemo.module.scss";
+// Components
 import Button from "@/components/Button";
-import { useState } from "react";
 import Modal from "@/components/Modal";
-import GoToTop from "@/components/GoToTop";
+
 function ModalDemo() {
   const [isModalBassic, setModalBassic] = useState(false);
   const [isModalAnimation, setModalAnimation] = useState(false);
@@ -17,8 +16,6 @@ function ModalDemo() {
 
   return (
     <>
-      <Header />
-      <Navigation />
       <div className={styles.wrapper}>
         <h1 className={styles.titleHeader}>Demo Modal</h1>
         <div className={styles.content}>

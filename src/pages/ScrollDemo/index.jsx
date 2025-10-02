@@ -1,13 +1,8 @@
-// Component
-import Header from "@/layouts/DefaultLayout/components/Header";
-import Navigation from "@/layouts/DefaultLayout/components/Navigation";
+// Scss
 import styles from "./ScrollDemo.module.scss";
 function scrollDemo() {
   return (
     <>
-      <Header />
-      <Navigation />
-
       <article className={styles.blog}>
         <div className={styles.content}>
           <p className={styles.text}>

@@ -1,11 +1,10 @@
-// Component
-import Header from "@/layouts/DefaultLayout/components/Header";
-import Navigation from "@/layouts/DefaultLayout/components/Navigation";
+// React
+import { useEffect, useState } from "react";
+// Scss
 import styles from "./Profile.module.scss";
 // img
 import avatarJuji from "@/assets/img/avatarJuji.png";
 import iconCrown from "@/assets/img/iconCrown.svg";
-import { useEffect, useState } from "react";
 
 function Profile() {
   const [previewUrl, setPreviewUrl] = useState(null);
@@ -24,8 +23,6 @@ function Profile() {
   };
   return (
     <>
-      <Header />
-      <Navigation />
       <div className={styles.Wrapper}>
         <div className={styles.info}>
           <label className={styles.avatarWrapper}>
