@@ -11,6 +11,7 @@ import { CgPerformance } from "react-icons/cg";
 import { RiFocus2Line } from "react-icons/ri";
 import { SiChocolatey } from "react-icons/si";
 import { SiCoronarenderer } from "react-icons/si";
+import { PiWebhooksLogoBold } from "react-icons/pi";
 function Navigation() {
   const navItem = [
     {
@@ -52,6 +53,11 @@ function Navigation() {
       to: "/render-props-demo",
       lable: "Render Props",
       icon: <SiCoronarenderer />,
+    },
+    {
+      to: "/custom-hooks-demo",
+      lable: "Custom Hooks",
+      icon: <PiWebhooksLogoBold />,
     },
   ];
   return (

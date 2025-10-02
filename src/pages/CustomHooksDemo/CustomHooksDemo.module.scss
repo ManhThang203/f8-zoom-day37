@@ -1,0 +1,73 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.container {
+  min-width: 600px;
+
+  padding: 25px 30px;
+
+  border-radius: 10px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #e16010;
+}
+.main {
+  display: flex;
+  gap: 25px;
+  //   margin-left: 15px;
+}
+.cart {
+  display: flex;
+  width: 100%;
+}
+.info {
+  position: relative;
+  min-height: 200px;
+  flex: 1;
+  padding: 15px;
+
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(31, 41, 55, 0.0705882353);
+}
+.bgbright {
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+}
+.bgDark {
+  background: #111827;
+  border: 1px solid rgb(248, 248, 247);
+}
+.btn {
+  margin-left: 15px;
+}
+.btnPost,
+.btnUser {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.item {
+  text-align: center;
+}
+.loadingPost,
+.loadingUserList {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
+.paragraph {
+  color: #333;
+}
+.paragraphChange {
+  color: #fff;
+}
