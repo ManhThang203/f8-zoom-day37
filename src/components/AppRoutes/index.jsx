@@ -11,6 +11,7 @@ import GoToTop from "@/components/GoToTop";
 import PerformanceDemo from "@/pages/PerformanceDemo";
 import FocusDemo from "@/pages/FocusDemo";
 import HOCDemo from "@/pages/HOCDemo";
+import RenderPropsDemo from "@/pages/RenderPropsDemo";
 
 // import Header from "@/layouts/DefaultLayout/components/Header";
 function AppRouter() {
@@ -27,6 +28,7 @@ function AppRouter() {
           <Route path="/performance-demo" element={<PerformanceDemo />} />
           <Route path="/focus-demo" element={<FocusDemo />} />
           <Route path="/hoc-demo" element={<HOCDemo />} />
+          <Route path="/render-props-demo" element={<RenderPropsDemo />} />
           <Route />
         </Route>
       </Routes>

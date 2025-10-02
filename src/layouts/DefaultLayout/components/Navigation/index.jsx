@@ -10,7 +10,7 @@ import { PiScroll } from "react-icons/pi";
 import { CgPerformance } from "react-icons/cg";
 import { RiFocus2Line } from "react-icons/ri";
 import { SiChocolatey } from "react-icons/si";
-
+import { SiCoronarenderer } from "react-icons/si";
 function Navigation() {
   const navItem = [
     {
@@ -47,6 +47,11 @@ function Navigation() {
       to: "/hoc-demo",
       lable: "Hoc Demo",
       icon: <SiChocolatey />,
+    },
+    {
+      to: "/render-props-demo",
+      lable: "Render Props",
+      icon: <SiCoronarenderer />,
     },
   ];
   return (
