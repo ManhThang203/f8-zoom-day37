@@ -1,7 +1,17 @@
 .navItem {
   position: fixed;
-  top: 25%;
+  top: 16%;
   left: 10px;
+  max-height: 500px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.wrapper {
+  max-height: 480px;
+  overflow: auto;
+  padding-right: 5px;
 }
 .item a {
   display: flex;

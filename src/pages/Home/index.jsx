@@ -1,4 +1,5 @@
 // Component
+import Loading from "@/components/Loading";
 import Header from "@/layouts/DefaultLayout/components/Header";
 import Navigation from "@/layouts/DefaultLayout/components/Navigation";
 function Home() {
@@ -6,18 +7,7 @@ function Home() {
     <>
       <Header />
       <Navigation />
-      <h1
-        style={{
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          fontSize: "1.7rem",
-          fontWeight: 550,
-        }}
-      >
-        Page Home
-      </h1>
+      <Loading />
     </>
   );
 }

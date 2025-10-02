@@ -9,6 +9,7 @@ import { SiModal } from "react-icons/si";
 import { PiScroll } from "react-icons/pi";
 import { CgPerformance } from "react-icons/cg";
 import { RiFocus2Line } from "react-icons/ri";
+import { SiChocolatey } from "react-icons/si";
 
 function Navigation() {
   const navItem = [
@@ -42,20 +43,27 @@ function Navigation() {
       lable: "Focus Demo",
       icon: <RiFocus2Line />,
     },
+    {
+      to: "/hoc-demo",
+      lable: "Hoc Demo",
+      icon: <SiChocolatey />,
+    },
   ];
   return (
     <nav className={styles.navItem}>
-      {navItem.map((item) => (
-        <li key={item.lable} className={styles.item}>
-          <NavLink
-            to={item.to}
-            className={({ isActive }) => (isActive ? styles.active : "")}
-          >
-            <span className={styles.icon}>{item.icon}</span>
-            <span className={styles.title}>{item.lable}</span>
-          </NavLink>
-        </li>
-      ))}
+      <ul className={styles.wrapper}>
+        {navItem.map((item) => (
+          <li key={item.lable} className={styles.item}>
+            <NavLink
+              to={item.to}
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              <span className={styles.icon}>{item.icon}</span>
+              <span className={styles.title}>{item.lable}</span>
+            </NavLink>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }

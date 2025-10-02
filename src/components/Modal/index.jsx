@@ -6,152 +6,122 @@ import Button from "@/components/Button";
 import styles from "./Modal.module.scss";
 // Icon
 import { IoCloseOutline } from "react-icons/io5";
-import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 
-const Modal = forwardRef(
-  (
-    {
-      isOpen: _isOpen = false,
-      children,
-      onRequestClose,
-      onAfterOpen,
-      onAfterClose,
-      closeTimeoutMS = 0,
-      overlayClassName,
-      className,
-      bodyOpenClassName,
-      htmlOpenClassName,
-      shouldCloseOnOverlayClick = true,
-      shouldCloseOnEsc = true,
-    },
-    ref
-  ) => {
-    const [isHidden, setIsHidden] = useState(!_isOpen);
-    console.log(isHidden);
-    const [isOpen, setIsOpen] = useState(_isOpen);
+function Modal({
+  isOpen,
+  children,
+  onRequestClose,
+  onAfterOpen,
+  onAfterClose,
+  closeTimeoutMS = 0,
+  overlayClassName,
+  className,
+  bodyOpenClassName,
+  htmlOpenClassName,
+  shouldCloseOnOverlayClick = true,
+  shouldCloseOnEsc = true,
+}) {
+  const [isHidden, setIsHidden] = useState(!isOpen);
 
-    // khi _isOpen thay đổi thì cập nhật State mới
-    useEffect(() => {
-      setIsOpen(_isOpen);
-    }, [_isOpen]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleRequestClose = () => {
+    setIsHidden(true);
+    setTimeout(onRequestClose, closeTimeoutMS);
+  };
 
-    // Tùy chỉnh giá trị Ref
-    useImperativeHandle(
-      ref,
-      () => ({
-        open() {
-          setIsOpen(true);
-        },
-        close() {
-          setIsOpen(false);
-        },
-        toggle() {
-          setIsOpen(!isOpen);
-        },
-      }),
-      [isOpen]
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const handleRequestClose = () => {
-      setIsHidden(true);
-      setTimeout(onRequestClose, closeTimeoutMS);
+  useEffect(() => {
+    if (isOpen) {
+      setIsHidden(false); // Đặt isHidden = false khi modal mở
+      setTimeout(() => {
+        onAfterOpen?.();
+      }, closeTimeoutMS);
+    } else {
+      onAfterClose?.();
+    }
+
+    return () => {
+      onAfterClose?.();
+    };
+  }, [isOpen, onAfterOpen, onAfterClose, closeTimeoutMS]);
+
+  useEffect(() => {
+    if (!shouldCloseOnEsc) return;
+
+    const handle = (e) => {
+      if (e.code === "Escape") {
+        handleRequestClose();
+      }
     };
 
-    useEffect(() => {
-      if (isOpen) {
-        setIsHidden(false); // Đặt isHidden = false khi modal mở
-        setTimeout(() => {
-          onAfterOpen?.();
-        }, closeTimeoutMS);
-      } else {
-        onAfterClose?.();
-      }
+    if (isOpen) {
+      document.addEventListener("keydown", handle);
+    }
 
-      return () => {
-        onAfterClose?.();
-      };
-    }, [isOpen, onAfterOpen, onAfterClose, closeTimeoutMS]);
+    return () => {
+      document.removeEventListener("keydown", handle);
+    };
+  }, [isOpen, shouldCloseOnEsc, handleRequestClose]);
 
-    useEffect(() => {
-      if (!shouldCloseOnEsc) return;
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add(bodyOpenClassName || "modal-open");
+      document.documentElement.classList.add(htmlOpenClassName || "modal-open");
+      document.body.style.overflowY = "hidden";
+    }
 
-      const handle = (e) => {
-        if (e.code === "Escape") {
-          handleRequestClose();
-        }
-      };
+    return () => {
+      document.body.classList.remove(bodyOpenClassName || "modal-open");
+      document.documentElement.classList.remove(
+        htmlOpenClassName || "modal-open"
+      );
+      document.body.style.overflowY = "";
+    };
+  }, [isOpen, bodyOpenClassName, htmlOpenClassName]);
 
-      if (isOpen) {
-        document.addEventListener("keydown", handle);
-      }
+  if (!isOpen && isHidden) return null;
 
-      return () => {
-        document.removeEventListener("keydown", handle);
-      };
-    }, [isOpen, shouldCloseOnEsc, handleRequestClose]);
+  return (
+    <div className={styles.modal}>
+      <div
+        className={clsx(
+          styles.content,
+          className, // Custom className sẽ được apply
+          (isHidden || !isOpen) && styles.hiddenModal
+        )}
+      >
+        <Button className={styles.btnClose} onClick={handleRequestClose}>
+          <IoCloseOutline className={styles.icon} />
+        </Button>
 
-    useEffect(() => {
-      if (isOpen) {
-        document.body.classList.add(bodyOpenClassName || "modal-open");
-        document.documentElement.classList.add(
-          htmlOpenClassName || "modal-open"
-        );
-        document.body.style.overflowY = "hidden";
-      }
+        <div className={styles.body}>{children}</div>
 
-      return () => {
-        document.body.classList.remove(bodyOpenClassName || "modal-open");
-        document.documentElement.classList.remove(
-          htmlOpenClassName || "modal-open"
-        );
-        document.body.style.overflowY = "";
-      };
-    }, [isOpen, bodyOpenClassName, htmlOpenClassName]);
-
-    if (!isOpen && isHidden) return null;
-
-    return (
-      <div className={styles.modal}>
-        <div
-          className={clsx(
-            styles.content,
-            className, // Custom className sẽ được apply
-            (isHidden || !isOpen) && styles.hiddenModal
-          )}
-        >
-          <Button className={styles.btnClose} onClick={handleRequestClose}>
-            <IoCloseOutline className={styles.icon} />
+        <div className={styles.btn}>
+          <Button size="large" outline onClick={handleRequestClose}>
+            Cancel
           </Button>
-
-          <div className={styles.body}>{children}</div>
-
-          <div className={styles.btn}>
-            <Button size="large" outline onClick={handleRequestClose}>
-              Cancel
-            </Button>
-            <Button size="large" outline onClick={handleRequestClose}>
-              Submit
-            </Button>
-          </div>
+          <Button size="large" outline onClick={handleRequestClose}>
+            Submit
+          </Button>
         </div>
-
-        <div
-          className={clsx(
-            styles.overlay,
-            overlayClassName, // Custom overlayClassName sẽ được apply
-            (isHidden || !isOpen) && styles.hiddenOverlay
-          )}
-          onClick={() => {
-            if (shouldCloseOnOverlayClick) {
-              handleRequestClose();
-            }
-          }}
-        />
       </div>
-    );
-  }
-);
+
+      <div
+        className={clsx(
+          styles.overlay,
+          overlayClassName, // Custom overlayClassName sẽ được apply
+          (isHidden || !isOpen) && styles.hiddenOverlay
+        )}
+        onClick={() => {
+          if (shouldCloseOnOverlayClick) {
+            handleRequestClose();
+          }
+        }}
+      />
+    </div>
+  );
+}
 
 Modal.propTypes = {
   isOpen: PropTypes.bool,
