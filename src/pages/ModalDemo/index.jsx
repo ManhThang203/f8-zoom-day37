@@ -1,5 +1,5 @@
 // React
-import { useState } from "react";
+import { useRef, useState } from "react";
 // Scss
 import styles from "./ModalDemo.module.scss";
 // Components
@@ -7,6 +7,7 @@ import Button from "@/components/Button";
 import Modal from "@/components/Modal";
 
 function ModalDemo() {
+  // State
   const [isModalBassic, setModalBassic] = useState(false);
   const [isModalAnimation, setModalAnimation] = useState(false);
   const [isModalNoClickOverlay, setModalNoClickOverlay] = useState(false);
@@ -14,9 +15,12 @@ function ModalDemo() {
   const [isModalCustom, setModalCustom] = useState(false);
   const [isModalCallbacks, setModalCallbacks] = useState(false);
 
+  // Ref
+  const modalRef = useRef(null);
+
   return (
     <>
-      <div className={styles.wrapper}>
+      <section className={styles.wrapper}>
         <h1 className={styles.titleHeader}>Demo Modal</h1>
         <div className={styles.content}>
           <div className={styles.demoSection}>
@@ -179,7 +183,40 @@ function ModalDemo() {
             )}
           </div>
         </div>
-      </div>
+      </section>
+      <section className={styles.wrapper}>
+        <h1 className={styles.titleHeader}>Demo Modal</h1>
+        <div className={styles.btn}>
+          <Button
+            size="large"
+            outline
+            className={styles.btn}
+            onClick={() => modalRef.current.open()}
+          >
+            Open Modal
+          </Button>
+        </div>
+
+        <Modal
+          ref={modalRef}
+          isOpen={isModalCallbacks}
+          onRequestClose={() => setModalCallbacks(false)}
+          closeTimeoutMS={500}
+          onAfterOpen={() => console.log("Modal đã mở")}
+          onAfterClose={() => console.log("Modal đã đóng")}
+          bodyOpenClassName="modal-open"
+          htmlOpenClassName="modal-open"
+          shouldCloseOnOverlayClick={true}
+          shouldCloseOnEsc={true}
+        >
+          <h2 className={styles.titleModal}>Xin chào 😗</h2>
+          <p>
+            Inventore facere repellat unde ab, eveniet nisi, eos cupiditate
+            quibusdam dolores ut dolorem accusamus deserunt, omnis reiciendis
+            pariatur quisquam magni.
+          </p>
+        </Modal>
+      </section>
     </>
   );
 }
