@@ -34,7 +34,7 @@
   flex-wrap: wrap;
 }
 .btn {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 120px;
 }
 .textLast strong,
@@ -85,9 +85,4 @@
     transform: scale(1) translateY(0);
     opacity: 1;
   }
-}
-
-// modal-open với body để ko hiện thanh cuộn
-.modal-open {
-  overflow-y: hidden;
 }

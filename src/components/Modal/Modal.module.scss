@@ -102,6 +102,8 @@
   }
 }
 
-.modal-open {
-  overflow-y: hidden;
+// Css ra bên ngoài compoenent
+:global(body.modal-open) {
+  overflow: hidden;
+  padding-right: 15px;
 }

@@ -11,10 +11,10 @@ import Button from "@/components/Button";
 
 // import styles from "./CustomHooksDemo.module.scss";
 function CustomHooksDemo() {
+  // State
   const [showUserList, toggleUserList] = useToggle(true);
   const [showPostList, togglePostList] = useToggle(true);
   const [isDark, toggleTheme] = useToggle(true);
-  console.log(isDark);
 
   return (
     <>
@@ -47,7 +47,7 @@ function CustomHooksDemo() {
                     onClick={togglePostList}
                     className={styles.btn}
                   >
-                    {showPostList ? "Show" : "Hidden"}
+                    {showPostList ? "Hidden" : "Show"}
                   </Button>
                 </div>
                 {showPostList && <PostsList isDark={isDark} />}
@@ -68,7 +68,7 @@ function CustomHooksDemo() {
                     onClick={toggleUserList}
                     className={styles.btn}
                   >
-                    {showPostList ? "Show" : "Hidden"}
+                    {showUserList ? "Hidden" : "Show"}
                   </Button>
                 </div>
                 {showUserList && <UsersList isDark={isDark} />}

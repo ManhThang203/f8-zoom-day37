@@ -28,15 +28,15 @@ const Modal = forwardRef(
     ref
   ) => {
     const [isHidden, setIsHidden] = useState(!_isOpen);
-    console.log(isHidden);
     const [isOpen, setIsOpen] = useState(_isOpen);
-    console.log(isOpen);
+    console.log(_isOpen);
 
     // khi _isOpen thay đổi thì cập nhật State mới
     useEffect(() => {
       if (_isOpen) {
         setIsOpen(true);
         setIsHidden(false);
+        console.log(123);
       } else {
         setIsOpen(false);
       }
@@ -66,6 +66,7 @@ const Modal = forwardRef(
 
     useEffect(() => {
       if (isOpen) {
+        console.log(123);
         setIsHidden(false); // Đặt isHidden = false khi modal mở
         setTimeout(() => {
           onAfterOpen?.();
@@ -99,18 +100,14 @@ const Modal = forwardRef(
 
     useEffect(() => {
       if (isOpen) {
-        document.body.classList.add(bodyOpenClassName || "modal-open");
-        document.documentElement.classList.add(
-          htmlOpenClassName || "modal-open"
-        );
+        document.body.classList.add(bodyOpenClassName);
+        document.documentElement.classList.add(htmlOpenClassName);
         document.body.style.overflowY = "hidden";
       }
 
       return () => {
-        document.body.classList.remove(bodyOpenClassName || "modal-open");
-        document.documentElement.classList.remove(
-          htmlOpenClassName || "modal-open"
-        );
+        document.body.classList.remove(bodyOpenClassName);
+        document.documentElement.classList.remove(htmlOpenClassName);
         document.body.style.overflowY = "";
       };
     }, [isOpen, bodyOpenClassName, htmlOpenClassName]);

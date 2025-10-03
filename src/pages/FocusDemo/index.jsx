@@ -24,7 +24,7 @@ function FocusDemo() {
   // Hàm xử lý lấy ra giá trị Input
   const handleValueInput = () => {
     const value1 = inputRef1.current.getValue();
-    const value2 = inputRef1.current.getValue();
+    const value2 = inputRef2.current.getValue();
     if (value1 === "" && value2 === "") return;
     alert(`
         Giá trị input 1: ${value1}\n 
