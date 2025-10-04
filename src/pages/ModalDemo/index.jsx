@@ -8,12 +8,13 @@ import Modal from "@/components/Modal";
 
 function ModalDemo() {
   // State
-  const [isModalBassic, setModalBassic] = useState(false);
-  const [isModalAnimation, setModalAnimation] = useState(false);
-  const [isModalNoClickOverlay, setModalNoClickOverlay] = useState(false);
-  const [isModalNoCloseEsc, setModalNoCloseEsc] = useState(false);
-  const [isModalCustom, setModalCustom] = useState(false);
-  const [isModalCallbacks, setModalCallbacks] = useState(false);
+  const [isBasicModal, setBasicModal] = useState(false);
+  const [isAnimationModal, setAnimationModal] = useState(false);
+  const [isNoClickOverlayModal, setNoClickOverlayModal] = useState(false);
+  const [isNoCloseEscModal, setNoCloseEscModal] = useState(false);
+  const [isCustomModal, setIsCustomModal] = useState(false);
+  const [isCallbackModal, setIsCallbackModal] = useState(false);
+  const [isModalRef, setIsModalRef] = useState(false);
 
   // Ref
   const modalRef = useRef(null);
@@ -29,14 +30,14 @@ function ModalDemo() {
               size="large"
               outline
               className={styles.btn}
-              onClick={() => setModalBassic(true)}
+              onClick={() => setBasicModal(true)}
             >
               Open Modal
             </Button>
-            {isModalBassic && (
+            {isBasicModal && (
               <Modal
-                isOpen={isModalBassic}
-                onRequestClose={() => setModalBassic(false)}
+                isOpen={isBasicModal}
+                onRequestClose={() => setBasicModal(false)}
               >
                 <h2 className={styles.titleModal}>Xin chào 😗</h2>
                 <p>
@@ -53,14 +54,14 @@ function ModalDemo() {
               size="large"
               outline
               className={styles.btn}
-              onClick={() => setModalAnimation(true)}
+              onClick={() => setAnimationModal(true)}
             >
               Open Modal
             </Button>
-            {isModalAnimation && (
+            {isAnimationModal && (
               <Modal
-                isOpen={isModalAnimation}
-                onRequestClose={() => setModalAnimation(false)}
+                isOpen={isAnimationModal}
+                onRequestClose={() => setAnimationModal(false)}
                 closeTimeoutMS={500}
               >
                 <h2 className={styles.titleModal}>Xin chào 😗</h2>
@@ -78,14 +79,14 @@ function ModalDemo() {
               size="large"
               outline
               className={styles.btn}
-              onClick={() => setModalNoClickOverlay(true)}
+              onClick={() => setNoClickOverlayModal(true)}
             >
               Open Modal
             </Button>
-            {isModalNoClickOverlay && (
+            {isNoClickOverlayModal && (
               <Modal
-                isOpen={isModalNoClickOverlay}
-                onRequestClose={() => setModalNoClickOverlay(false)}
+                isOpen={isNoClickOverlayModal}
+                onRequestClose={() => setNoClickOverlayModal(false)}
                 closeTimeoutMS={500}
                 shouldCloseOnOverlayClick={false}
               >
@@ -104,14 +105,14 @@ function ModalDemo() {
               size="large"
               outline
               className={styles.btn}
-              onClick={() => setModalNoCloseEsc(true)}
+              onClick={() => setNoCloseEscModal(true)}
             >
               Open Modal
             </Button>
-            {isModalNoCloseEsc && (
+            {isNoCloseEscModal && (
               <Modal
-                isOpen={isModalNoCloseEsc}
-                onRequestClose={() => setModalNoCloseEsc(false)}
+                isOpen={isNoCloseEscModal}
+                onRequestClose={() => setNoCloseEscModal(false)}
                 closeTimeoutMS={500}
                 shouldCloseOnEsc={false}
               >
@@ -130,14 +131,14 @@ function ModalDemo() {
               size="large"
               outline
               className={styles.btn}
-              onClick={() => setModalCustom(true)}
+              onClick={() => setIsCustomModal(true)}
             >
               Open Modal
             </Button>
-            {isModalCustom && (
+            {isCustomModal && (
               <Modal
-                isOpen={isModalCustom}
-                onRequestClose={() => setModalCustom(false)}
+                isOpen={isCustomModal}
+                onRequestClose={() => setIsCustomModal(false)}
                 closeTimeoutMS={500}
                 overlayClassName={styles.customOverlay}
                 className={styles.customModalBody}
@@ -157,14 +158,14 @@ function ModalDemo() {
               size="large"
               outline
               className={styles.btn}
-              onClick={() => setModalCallbacks(true)}
+              onClick={() => setIsCallbackModal(true)}
             >
               Open Modal
             </Button>
-            {isModalCallbacks && (
+            {isCallbackModal && (
               <Modal
-                isOpen={isModalCallbacks}
-                onRequestClose={() => setModalCallbacks(false)}
+                isOpen={isCallbackModal}
+                onRequestClose={() => setIsCallbackModal(false)}
                 closeTimeoutMS={500}
                 onAfterOpen={() => console.log("Modal đã mở")}
                 onAfterClose={() => console.log("Modal đã đóng")}
@@ -199,8 +200,8 @@ function ModalDemo() {
 
         <Modal
           ref={modalRef}
-          isOpen={isModalCallbacks}
-          onRequestClose={() => setModalCallbacks(false)}
+          isOpen={isModalRef}
+          onRequestClose={() => setIsModalRef(false)}
           closeTimeoutMS={500}
           onAfterOpen={() => console.log("Modal đã mở")}
           onAfterClose={() => console.log("Modal đã đóng")}
