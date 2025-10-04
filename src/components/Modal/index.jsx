@@ -6,7 +6,13 @@ import Button from "@/components/Button";
 import styles from "./Modal.module.scss";
 // Icon
 import { IoCloseOutline } from "react-icons/io5";
-import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
+import {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
 import clsx from "clsx";
 
 const Modal = forwardRef(
@@ -29,14 +35,13 @@ const Modal = forwardRef(
   ) => {
     const [isHidden, setIsHidden] = useState(!_isOpen);
     const [isOpen, setIsOpen] = useState(_isOpen);
-    console.log(_isOpen);
+    const idRef = useRef(null);
 
     // khi _isOpen thay đổi thì cập nhật State mới
     useEffect(() => {
       if (_isOpen) {
         setIsOpen(true);
         setIsHidden(false);
-        console.log(123);
       } else {
         setIsOpen(false);
       }
@@ -58,6 +63,7 @@ const Modal = forwardRef(
       }),
       [isOpen]
     );
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleRequestClose = () => {
       setIsHidden(true);
@@ -66,18 +72,15 @@ const Modal = forwardRef(
 
     useEffect(() => {
       if (isOpen) {
-        console.log(123);
         setIsHidden(false); // Đặt isHidden = false khi modal mở
-        setTimeout(() => {
+        idRef.current = setTimeout(() => {
           onAfterOpen?.();
         }, closeTimeoutMS);
       } else {
-        onAfterClose?.();
+        idRef.current = setTimeout(() => {
+          onAfterClose?.();
+        }, closeTimeoutMS);
       }
-
-      return () => {
-        onAfterClose?.();
-      };
     }, [isOpen, onAfterOpen, onAfterClose, closeTimeoutMS]);
 
     useEffect(() => {
@@ -115,7 +118,7 @@ const Modal = forwardRef(
     if (!isOpen && isHidden) return null;
 
     return (
-      <div className={styles.modal}>
+      <div className={styles.modal} ref={idRef}>
         <div
           className={clsx(
             styles.content,

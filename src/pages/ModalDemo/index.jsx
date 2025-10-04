@@ -14,7 +14,7 @@ function ModalDemo() {
   const [isNoCloseEscModal, setNoCloseEscModal] = useState(false);
   const [isCustomModal, setIsCustomModal] = useState(false);
   const [isCallbackModal, setIsCallbackModal] = useState(false);
-  const [isModalRef, setIsModalRef] = useState(false);
+  const [isModalRef] = useState(false);
 
   // Ref
   const modalRef = useRef(null);
@@ -194,14 +194,22 @@ function ModalDemo() {
             className={styles.btn}
             onClick={() => modalRef.current.open()}
           >
-            Open Modal
+            Open Ref Modal
+          </Button>
+          <Button
+            size="large"
+            outline
+            className={styles.btn}
+            onClick={() => modalRef.current.open()}
+          >
+            Toggle Ref Modal
           </Button>
         </div>
 
         <Modal
           ref={modalRef}
           isOpen={isModalRef}
-          onRequestClose={() => setIsModalRef(false)}
+          onRequestClose={() => modalRef.current.close()}
           closeTimeoutMS={500}
           onAfterOpen={() => console.log("Modal đã mở")}
           onAfterClose={() => console.log("Modal đã đóng")}
