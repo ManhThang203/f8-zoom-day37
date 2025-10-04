@@ -186,7 +186,7 @@ function ModalDemo() {
         </div>
       </section>
       <section className={styles.wrapper}>
-        <h1 className={styles.titleHeader}>Demo Modal</h1>
+        <h1 className={styles.titleHeader}>Demo Ref Modal</h1>
         <div className={styles.btn}>
           <Button
             size="large"
